@@ -1,5 +1,5 @@
 import 'package:core/core.dart' show Hive, Box;
-import 'package:core/enums/role.dart';
+import 'package:core/enums/role_enum.dart';
 import 'package:core_ui/core_ui.dart' show AppNumConstants;
 import 'package:data/entities/cart_item/cart_item_entity.dart';
 import 'package:data/entities/dish_type/dish_type_entity.dart';

@@ -1,4 +1,4 @@
-import 'package:core/enums/role.dart';
+import 'package:core/enums/role_enum.dart';
 import 'package:flutter/widgets.dart' show ChangeNotifier;
 
 class AuthService extends ChangeNotifier {

@@ -1,6 +1,5 @@
+import 'package:core/enums/order_status_enum.dart';
 import 'package:domain/models/cart_items/cart_item_model.dart';
-
-import 'order_status_enum.dart';
 
 class OrderModel {
   final String id;

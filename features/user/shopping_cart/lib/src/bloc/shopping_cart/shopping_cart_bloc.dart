@@ -1,8 +1,7 @@
-import 'package:core/core.dart' show Bloc, Emitter, Uuid;
+import 'package:core/core.dart';
 import 'package:domain/domain.dart';
 import 'package:domain/models/cart_items/cart_item_model.dart';
 import 'package:domain/models/order_history/order_model.dart';
-import 'package:domain/models/order_history/order_status_enum.dart';
 import 'package:domain/usecase/shopping_cart/send_order_usecase.dart';
 import 'package:domain/usecase/usecase.dart';
 
@@ -100,7 +99,6 @@ class ShoppingCartBloc extends Bloc<ShoppingCartEvent, ShoppingCartState> {
           dateTime: DateTime.now(),
           price: state.totalPrice(),
           products: state.items,
-          //TODO: think about this moment
           status: OrderStatus.accepted,
         ),
       );

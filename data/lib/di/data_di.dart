@@ -1,6 +1,5 @@
 import 'package:core/core.dart';
 import 'package:core/di/app_di.dart';
-import 'package:core/enums/role.dart';
 import 'package:core/services/network_service.dart';
 import 'package:data/entities/cart_item/cart_item_entity.dart';
 import 'package:data/entities/dish/dish_entity.dart';

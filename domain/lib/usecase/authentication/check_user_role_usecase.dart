@@ -1,4 +1,4 @@
-import 'package:core/enums/role.dart';
+import 'package:core/enums/role_enum.dart';
 import 'package:domain/repositories/user_repository.dart';
 import 'package:domain/usecase/usecase.dart';
 

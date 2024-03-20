@@ -1,4 +1,4 @@
-import 'package:core/enums/role.dart';
+import 'package:core/enums/role_enum.dart';
 import 'package:domain/models/authentication/email_sign_up_model.dart';
 import 'package:domain/models/user/user_model.dart';
 import 'package:domain/repositories/authentication_repository.dart';

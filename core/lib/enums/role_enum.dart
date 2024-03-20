@@ -1,6 +1,6 @@
 import 'package:core/core.dart';
 
-part 'role.g.dart';
+part 'role_enum.g.dart';
 
 @HiveType(typeId: 4)
 enum Role {

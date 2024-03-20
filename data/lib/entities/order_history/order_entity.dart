@@ -1,3 +1,4 @@
+import 'package:core/core.dart';
 import 'package:data/entities/cart_item/cart_item_entity.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -12,6 +13,7 @@ class OrderEntity with _$OrderEntity {
     required String id,
     required DateTime dateTime,
     required double price,
+    required OrderStatus status,
     required List<CartItemEntity> products,
   }) = _OrderEntity;
 

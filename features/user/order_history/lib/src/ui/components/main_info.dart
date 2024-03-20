@@ -32,15 +32,24 @@ class MainInfo extends StatelessWidget {
             color: Theme.of(context).indicatorColor,
           ),
         ),
-        Align(
-          alignment: Alignment.centerLeft,
-          child: Padding(
-            padding: const EdgeInsets.only(bottom: AppDimens.padding10),
-            child: Text(
-              '${AppStrConstants.date}: ${_model.dateTime.day}.${_model.dateTime.month}.${_model.dateTime.year}',
-              style: AppFonts.normal22,
+        Row(
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.only(bottom: AppDimens.padding10),
+              child: Text(
+                '${AppStrConstants.date}: ${_model.dateTime.day}.${_model.dateTime.month}.${_model.dateTime.year}',
+                style: AppFonts.normal22,
+              ),
             ),
-          ),
+            const SizedBox(width: 20),
+            Padding(
+              padding: const EdgeInsets.only(bottom: AppDimens.padding10),
+              child: Text(
+                'Status: ${_model.status.value}',
+                style: AppFonts.normal22,
+              ),
+            ),
+          ],
         ),
         Align(
           alignment: Alignment.centerLeft,
