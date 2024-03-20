@@ -88,7 +88,11 @@ class HomeContent extends StatelessWidget {
         ),
         BlocBuilder<HomeScreenBloc, HomeScreenState>(
           builder: (BuildContext context, HomeScreenState state) {
-            Bloc.observer = CartObserver(context: context);
+            Bloc.observer = CartObserver(
+              callback: () => BlocProvider.of<HomeScreenBloc>(context).add(
+                ChangeCartCountEvent(),
+              ),
+            );
             if (state.isVisibleMessage) {
               return NetworkPopUp(isConnected: state.isConnected);
             }
