@@ -14,6 +14,14 @@ class AuthGuard extends AutoRouteGuard {
   @override
   void onNavigation(NavigationResolver resolver, StackRouter router) {
     switch (_authService.role) {
+      case Role.undefined:
+        {
+          router.pushAndPopUntil(
+            const EmptySign(),
+            predicate: (Route<dynamic> predicate) => false,
+          );
+          break;
+        }
       case Role.user:
         {
           resolver.next();
@@ -23,14 +31,6 @@ class AuthGuard extends AutoRouteGuard {
         {
           router.pushAndPopUntil(
             const AdminHomeRoute(),
-            predicate: (Route<dynamic> predicate) => false,
-          );
-          break;
-        }
-      case Role.undefined:
-        {
-          router.pushAndPopUntil(
-            const EmptySign(),
             predicate: (Route<dynamic> predicate) => false,
           );
           break;
