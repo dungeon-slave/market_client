@@ -4,7 +4,7 @@ import 'package:core/core.dart';
 import 'package:core_ui/core_ui.dart';
 import 'package:detailed_page/detailed_page.dart';
 import 'package:dishes_menu/dishes_menu.dart';
-import 'package:home_screen/home_screen.dart';
+import 'package:user_home/user_home_screen.dart';
 import 'package:main_screen/main_screen.dart';
 import 'package:navigation/src/app_router/auth_guard.dart';
 import 'package:navigation/src/hero_empty_router.dart';
@@ -28,8 +28,8 @@ part 'app_router.gr.dart';
     DetailedPageModule,
     OrderHistoryModule,
     ShoppingCartModule,
-    AdminScreenModule,
-    HomeScreenModule,
+    AdminHomeScreenModule,
+    UserHomeScreenModule,
     UsersScreenModule,
     AdminMenuScreenModule,
   ],
@@ -67,7 +67,7 @@ class AppRouter extends _$AppRouter {
             ),
             AutoRoute(
               path: 'home',
-              page: HomeRoute.page,
+              page: UserHomeRoute.page,
               initial: true,
               guards: <AutoRouteGuard>[_authGuard],
               children: <AutoRoute>[

@@ -1,4 +1,4 @@
-import 'package:core/core.dart' show Bloc, Emitter;
+import 'package:core/core.dart';
 
 part 'admin_screen_event.dart';
 part 'admin_screen_state.dart';

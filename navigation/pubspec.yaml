@@ -30,8 +30,8 @@ dependencies:
     path: ../features/common/main_screen
 
   #user features
-  home_screen:
-    path: ../features/user/home_screen
+  user_home:
+    path: ../features/user/user_home
   dishes_menu:
     path: ../features/user/dishes_menu
   order_history:

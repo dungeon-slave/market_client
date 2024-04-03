@@ -12,5 +12,5 @@ class DetailedPageBloc extends Bloc<DetailedPageEvent, DetailedPageState> {
     on<CloseDetailedEvent>(_close);
   }
 
-  void _close(_, __) => _appRouter.pop();
+  void _close(_, __) => _appRouter.popForced();
 }

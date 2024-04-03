@@ -5,14 +5,14 @@ import 'package:domain/usecase/text_scale/fetch_text_scale_usecase.dart';
 import 'package:domain/usecase/theme/fetch_theme_usecase.dart';
 import 'package:domain/usecase/usecase.dart';
 
-part 'home_screen_event.dart';
-part 'home_screen_state.dart';
+part 'user_home_screen_event.dart';
+part 'user_home_screen_state.dart';
 
-class HomeScreenBloc extends Bloc<HomeScreenEvent, HomeScreenState> {
+class UserHomeScreenBloc extends Bloc<UserHomeScreenEvent, UserHomeScreenState> {
   final FetchCartCountUseCase _fetchCartCountUseCase;
   final NetworkService _networkService;
 
-  HomeScreenBloc({
+  UserHomeScreenBloc({
     required FetchCartCountUseCase fetchCartCountUseCase,
     required NetworkService networkService,
     required FetchThemeUseCase fetchThemeUseCase,
@@ -20,7 +20,7 @@ class HomeScreenBloc extends Bloc<HomeScreenEvent, HomeScreenState> {
   })  : _fetchCartCountUseCase = fetchCartCountUseCase,
         _networkService = networkService,
         super(
-          const HomeScreenState(
+          const UserHomeScreenState(
             count: 0,
             isConnected: false,
             isVisibleMessage: false,
@@ -42,7 +42,7 @@ class HomeScreenBloc extends Bloc<HomeScreenEvent, HomeScreenState> {
     add(InitEvent());
   }
 
-  Future<void> _init(InitEvent event, Emitter<HomeScreenState> emit) async {
+  Future<void> _init(InitEvent event, Emitter<UserHomeScreenState> emit) async {
     emit(
       state.copyWith(
         count: _fetchCartCountUseCase.execute(const NoParams()),
@@ -51,7 +51,7 @@ class HomeScreenBloc extends Bloc<HomeScreenEvent, HomeScreenState> {
   }
 
   void _changeCartCount(
-      ChangeCartCountEvent event, Emitter<HomeScreenState> emit) {
+      ChangeCartCountEvent event, Emitter<UserHomeScreenState> emit) {
     emit(
       state.copyWith(
         count: _fetchCartCountUseCase.execute(const NoParams()),
@@ -60,7 +60,7 @@ class HomeScreenBloc extends Bloc<HomeScreenEvent, HomeScreenState> {
   }
 
   void _changeMessageVisibility(
-      ShowMessageEvent event, Emitter<HomeScreenState> emit) {
+      ShowMessageEvent event, Emitter<UserHomeScreenState> emit) {
     emit(
       state.copyWith(
         isVisibleMessage: false,
@@ -69,7 +69,7 @@ class HomeScreenBloc extends Bloc<HomeScreenEvent, HomeScreenState> {
   }
 
   void _changeConnectionStatus(
-      ChangeConnectionEvent event, Emitter<HomeScreenState> emit) {
+      ChangeConnectionEvent event, Emitter<UserHomeScreenState> emit) {
     emit(
       state.copyWith(
         isConnected: event.isConnected,
