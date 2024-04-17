@@ -1,4 +1,4 @@
-import 'package:core/core.dart' show Bloc, Emitter, Uuid;
+import 'package:core/core.dart';
 import 'package:domain/domain.dart';
 import 'package:domain/models/cart_items/cart_item_model.dart';
 import 'package:domain/models/order_history/order_model.dart';
@@ -99,6 +99,7 @@ class ShoppingCartBloc extends Bloc<ShoppingCartEvent, ShoppingCartState> {
           dateTime: DateTime.now(),
           price: state.totalPrice(),
           products: state.items,
+          status: OrderStatus.accepted,
         ),
       );
       await _clearCartUseCase.execute(const NoParams());

@@ -1,6 +1,5 @@
 import 'package:core/core.dart';
 import 'package:core_ui/core_ui.dart';
-import 'package:domain/models/order_history/order_model.dart';
 import 'package:flutter/material.dart';
 import 'package:order_history/order_history.dart';
 import 'package:order_history/src/ui/components/order_history_item.dart';
@@ -42,14 +41,7 @@ class OrderHistoryContent extends StatelessWidget {
                   padding: const EdgeInsets.all(AppDimens.padding10),
                   itemCount: state.items.length,
                   itemBuilder: (_, int index) {
-                    return OrderHistoryItem(
-                      model: OrderModel(
-                        id: state.items[index].id,
-                        dateTime: state.items[index].dateTime,
-                        price: state.items[index].price,
-                        products: state.items[index].products,
-                      ),
-                    );
+                    return OrderHistoryItem(model: state.items[index]);
                   },
                 );
               },
