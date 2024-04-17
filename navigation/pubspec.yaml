@@ -19,7 +19,9 @@ dependencies:
   core_ui:
     path: ../core_ui
 
-  #common features
+  #FEATURES
+
+  #common
   settings:
     path: ../features/common/settings
   sign_in_screen:
@@ -29,7 +31,7 @@ dependencies:
   main_screen:
     path: ../features/common/main_screen
 
-  #user features
+  #user
   user_home:
     path: ../features/user/user_home
   dishes_menu:
@@ -41,13 +43,25 @@ dependencies:
   detailed_page:
     path: ../features/user/detailed_page
 
-  #admin features
+  #admin
   admin_home:
     path: ../features/admin/admin_home
   admin_menu:
     path: ../features/admin/admin_menu
   users:
     path: ../features/admin/users
+
+  #user manager
+  user_manager_home:
+    path: ../features/managers/user_manager/user_manager_home
+
+  #order manager
+  order_manager_home:
+    path: ../features/managers/order_manager/order_manager_home
+
+  #catalogue manager
+  catalogue_manager_home:
+    path: ../features/managers/catalogue_manager/catalogue_manager_home
   
 dev_dependencies:
   flutter_test:

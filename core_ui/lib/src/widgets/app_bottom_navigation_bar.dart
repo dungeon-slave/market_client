@@ -9,11 +9,12 @@ class AppBottomNavigationBar extends StatelessWidget {
     required this.router,
     required this.items,
   });
-  
+
   @override
   Widget build(BuildContext context) {
     final ThemeData themeData = Theme.of(context);
 
+    //todo: find solution to border on top of bar
     return BottomNavigationBar(
       backgroundColor: themeData.scaffoldBackgroundColor,
       currentIndex: router.activeIndex,

@@ -1,9 +1,11 @@
 import 'package:admin_home/admin_home_screen.dart';
 import 'package:admin_menu/admin_menu.dart';
+import 'package:catalogue_manager_home/catalogue_manager_home_screen.dart';
 import 'package:core/core.dart';
 import 'package:core_ui/core_ui.dart';
 import 'package:detailed_page/detailed_page.dart';
 import 'package:dishes_menu/dishes_menu.dart';
+import 'package:order_manager_home/order_manager_home_screen.dart';
 import 'package:user_home/user_home_screen.dart';
 import 'package:main_screen/main_screen.dart';
 import 'package:navigation/src/app_router/auth_guard.dart';
@@ -13,6 +15,7 @@ import 'package:settings/settings.dart';
 import 'package:shopping_cart/shopping_cart.dart';
 import 'package:sign_in_screen/sign_in_screen.dart';
 import 'package:sign_up_screen/sign_up_screen.dart';
+import 'package:user_manager_home/user_manager_home_screen.dart';
 import 'package:users/users.dart';
 
 part 'app_router.gr.dart';
@@ -32,9 +35,16 @@ part 'app_router.gr.dart';
     UserHomeScreenModule,
     UsersScreenModule,
     AdminMenuScreenModule,
+    UserManagerHomeScreenModule,
+    OrderManagerHomeScreenModule,
+    CatalogueManagerHomeScreenModule,
   ],
 )
 class AppRouter extends _$AppRouter {
+  final AutoRoute _settingsRoute = AutoRoute(
+    path: 'settings',
+    page: SettingsRoute.page,
+  );
   final AuthGuard _authGuard;
 
   AppRouter({
@@ -95,10 +105,7 @@ class AppRouter extends _$AppRouter {
                   page: ShoppingCartRoute.page,
                   maintainState: false,
                 ),
-                AutoRoute(
-                  path: 'settings',
-                  page: SettingsRoute.page,
-                ),
+                _settingsRoute,
               ],
             ),
             AutoRoute(
@@ -113,10 +120,28 @@ class AppRouter extends _$AppRouter {
                   path: 'users',
                   page: Users.page,
                 ),
-                AutoRoute(
-                  path: 'settings',
-                  page: SettingsRoute.page,
-                ),
+                _settingsRoute,
+              ],
+            ),
+            AutoRoute(
+              page: UserManagerHomeRoute.page,
+              path: 'userManager',
+              children: <AutoRoute>[
+                _settingsRoute,
+              ],
+            ),
+            AutoRoute(
+              page: OrderManagerHomeRoute.page,
+              path: 'orderManager',
+              children: <AutoRoute>[
+                _settingsRoute,
+              ],
+            ),
+            AutoRoute(
+              page: CatalogueManagerHomeRoute.page,
+              path: 'catalogueManager',
+              children: <AutoRoute>[
+                _settingsRoute,
               ],
             ),
           ],
