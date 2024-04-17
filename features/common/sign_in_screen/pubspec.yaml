@@ -18,8 +18,8 @@ dependencies:
     path: ../../../domain
   navigation: 
     path: ../../../navigation
-  home_screen:
-    path: ../../user/home_screen
+  user_home:
+    path: ../../user/user_home
   sign_up_screen:
     path: ../sign_up_screen
 

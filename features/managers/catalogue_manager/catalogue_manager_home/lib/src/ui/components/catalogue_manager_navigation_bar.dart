@@ -2,10 +2,10 @@ import 'package:core/core.dart';
 import 'package:core_ui/core_ui.dart';
 import 'package:flutter/material.dart';
 
-class AdminNavigationBar extends StatelessWidget {
+class CatalogueManagerNavigationBar extends StatelessWidget {
   final TabsRouter _router;
 
-  const AdminNavigationBar({
+  const CatalogueManagerNavigationBar({
     required TabsRouter router,
     super.key,
   }) : _router = router;
@@ -14,6 +14,7 @@ class AdminNavigationBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return AppBottomNavigationBar(
       router: _router,
+      //todo: put necessary icons here
       items: const <BottomNavigationBarItem>[
         BottomNavigationBarItem(
           activeIcon: AppIcon(AppIconsData.selectedAdminMenu),

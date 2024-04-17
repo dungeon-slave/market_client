@@ -4,7 +4,7 @@ import 'package:core/services/url_service.dart';
 import 'package:core_ui/core_ui.dart';
 import 'package:domain/domain.dart';
 import 'package:domain/usecase/usecase.dart';
-import 'package:home_screen/home_screen.gm.dart';
+import 'package:user_home/user_home_screen.gm.dart';
 import 'package:navigation/navigation.dart' show AppRouter;
 
 part 'settings_bloc_event.dart';
@@ -65,7 +65,7 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
   Future<void> _signOut(_, __) async {
     await _signOutUseCase.execute(const NoParams());
     _authService.role = _checkUserUseCase.execute(const NoParams());
-    _appRouter.replace(const HomeRoute());
+    _appRouter.replace(const UserHomeRoute());
   }
 
   Future<void> _openLink(OpenLinkEvent event, _) async {

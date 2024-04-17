@@ -1,7 +1,7 @@
-name: home_screen
+name: user_home
 version: 0.0.1
 publish_to: none
-description: Home screen feature.
+description: User home screen feature.
 
 environment:
   sdk: '>=3.0.5 <4.0.0'

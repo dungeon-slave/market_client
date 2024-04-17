@@ -22,8 +22,8 @@ dependencies:
     path: ../../../navigation
 
   #features
-  home_screen:
-    path: ../../user/home_screen
+  user_home:
+    path: ../../user/user_home
 
 dev_dependencies:
   flutter_test:

@@ -4,7 +4,7 @@ import 'package:domain/models/authentication/email_sign_up_model.dart';
 import 'package:domain/usecase/authentication/check_user_role_usecase.dart';
 import 'package:domain/usecase/authentication/email_sign_up_usecase.dart';
 import 'package:domain/usecase/usecase.dart';
-import 'package:home_screen/home_screen.gm.dart';
+import 'package:user_home/user_home_screen.gm.dart';
 import 'package:navigation/navigation.dart';
 
 part 'sign_up_event.dart';
@@ -42,7 +42,7 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
     try {
       await _emailSignUpUseCase.execute(event.data);
       _authService.role = _checkUserUseCase.execute(const NoParams());
-      _appRouter.replace(const HomeRoute());
+      _appRouter.replace(const UserHomeRoute());
     } catch (e) {
       emit(
         state.copyWith(

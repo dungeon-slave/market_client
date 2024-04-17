@@ -12,29 +12,13 @@ class AdminHomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AutoTabsScaffold(
-      routes: const <PageRouteInfo>[
+    return AppAutoTabsScaffold(
+      routes: <PageRouteInfo>[
         AdminMenu(),
         Users(),
         SettingsRoute(),
       ],
-      animationCurve: Curves.linear,
-      animationDuration: const Duration(
-        milliseconds: AppNumConstants.mainDuration,
-      ),
-      transitionBuilder: (
-        _,
-        Widget child,
-        Animation<double> animation,
-      ) {
-        return FadeTransition(
-          opacity: animation,
-          child: child,
-        );
-      },
-      bottomNavigationBuilder: (_, TabsRouter router) {
-        return AdminNavigationBar(router: router);
-      },
+      navigationBar: (TabsRouter router) => AdminNavigationBar(router: router),
     );
   }
 }

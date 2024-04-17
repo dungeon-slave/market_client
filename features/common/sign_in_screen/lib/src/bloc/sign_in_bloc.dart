@@ -5,7 +5,7 @@ import 'package:domain/usecase/authentication/check_user_role_usecase.dart';
 import 'package:domain/usecase/authentication/email_sign_in_usecase.dart';
 import 'package:domain/usecase/authentication/google_sign_in_usecase.dart';
 import 'package:domain/usecase/usecase.dart';
-import 'package:home_screen/home_screen.gm.dart';
+import 'package:user_home/user_home_screen.gm.dart';
 import 'package:navigation/navigation.dart';
 import 'package:sign_up_screen/sign_up_screen.gm.dart';
 
@@ -52,7 +52,7 @@ class SignInBloc extends Bloc<LoginScreenEvent, SignInState> {
     try {
       await _emailSignInUseCase.execute(event.model);
       _authService.role = _checkUserUseCase.execute(const NoParams());
-      _appRouter.replace(const HomeRoute());
+      _appRouter.replace(const UserHomeRoute());
     } catch (e) {
       emit(
         state.copyWith(
@@ -74,7 +74,7 @@ class SignInBloc extends Bloc<LoginScreenEvent, SignInState> {
     try {
       await _googleSignInUseCase.execute(const NoParams());
       _authService.role = _checkUserUseCase.execute(const NoParams());
-      _appRouter.replace(const HomeRoute());
+      _appRouter.replace(const UserHomeRoute());
     } catch (e) {
       emit(
         state.copyWith(

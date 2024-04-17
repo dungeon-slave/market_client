@@ -1,7 +1,7 @@
 import 'package:core/core.dart';
 import 'package:core_ui/core_ui.dart' show AppDimens, AppFonts;
 import 'package:flutter/material.dart';
-import 'package:home_screen/src/bloc/home_screen_bloc.dart';
+import 'package:user_home/src/bloc/user_home_screen_bloc.dart';
 
 class CartCountBadge extends StatelessWidget {
   final Icon _themeIcon;
@@ -13,8 +13,8 @@ class CartCountBadge extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<HomeScreenBloc, HomeScreenState>(
-      builder: (BuildContext context, HomeScreenState state) {
+    return BlocBuilder<UserHomeScreenBloc, UserHomeScreenState>(
+      builder: (BuildContext context, UserHomeScreenState state) {
         return Badge(
           offset: const Offset(
             AppDimens.margin5,

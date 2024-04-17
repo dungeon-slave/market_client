@@ -1,24 +1,24 @@
-part of 'home_screen_bloc.dart';
+part of 'user_home_screen_bloc.dart';
 
-class HomeScreenState {
+class UserHomeScreenState {
   final int count;
   final bool isConnected;
   final bool isVisibleMessage;
 
-  const HomeScreenState({
+  const UserHomeScreenState({
     required this.count,
     required this.isConnected,
     required this.isVisibleMessage,
   });
 
-  HomeScreenState copyWith({
+  UserHomeScreenState copyWith({
     int? count,
     bool? isConnected,
     bool? isVisibleMessage,
     bool? isDark,
     double? textScale,
   }) {
-    return HomeScreenState(
+    return UserHomeScreenState(
       count: count ?? this.count,
       isConnected: isConnected ?? this.isConnected,
       isVisibleMessage: isVisibleMessage ?? this.isVisibleMessage,
