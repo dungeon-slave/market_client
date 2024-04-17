@@ -17,3 +17,4 @@ export 'src/widgets/empty_list.dart';
 export 'src/widgets/settings_widget.dart';
 export 'src/widgets/snack_bar_service.dart';
 export 'src/widgets/app_auto_tabs_scaffold.dart';
+export 'src/widgets/app_bottom_navigation_bar.dart';

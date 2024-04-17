@@ -13,16 +13,8 @@ class UserNavigationBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final ThemeData themeData = Theme.of(context);
-
-    return BottomNavigationBar(
-      backgroundColor: themeData.scaffoldBackgroundColor,
-      currentIndex: router.activeIndex,
-      onTap: router.setActiveIndex,
-      showUnselectedLabels: true,
-      type: BottomNavigationBarType.fixed,
-      selectedItemColor: themeData.indicatorColor,
-      unselectedItemColor: themeData.indicatorColor,
+    return AppBottomNavigationBar(
+      router: router,
       items: const <BottomNavigationBarItem>[
         BottomNavigationBarItem(
           activeIcon: AppIcon(AppIconsData.selectedMenu),

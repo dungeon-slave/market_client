@@ -12,40 +12,25 @@ class AdminNavigationBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final ThemeData theme = Theme.of(context);
-
-    return Container(
-      decoration: BoxDecoration(
-        border: Border(
-          top: BorderSide(color: theme.indicatorColor),
+    return AppBottomNavigationBar(
+      router: _router,
+      items: const <BottomNavigationBarItem>[
+        BottomNavigationBarItem(
+          activeIcon: AppIcon(AppIconsData.selectedAdminMenu),
+          icon: AppIcon(AppIconsData.unselectedAdminMenu),
+          label: AppStrConstants.menuTitle,
         ),
-      ),
-      child: BottomNavigationBar(
-        backgroundColor: theme.scaffoldBackgroundColor,
-        currentIndex: _router.activeIndex,
-        onTap: _router.setActiveIndex,
-        showUnselectedLabels: true,
-        type: BottomNavigationBarType.fixed,
-        selectedItemColor: theme.indicatorColor,
-        unselectedItemColor: theme.indicatorColor,
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            activeIcon: AppIcon(AppIconsData.selectedAdminMenu),
-            icon: AppIcon(AppIconsData.unselectedAdminMenu),
-            label: AppStrConstants.menuTitle,
-          ),
-          BottomNavigationBarItem(
-            activeIcon: AppIcon(AppIconsData.selectedUsers),
-            icon: AppIcon(AppIconsData.unselectedUsers),
-            label: AppStrConstants.users,
-          ),
-          BottomNavigationBarItem(
-            activeIcon: AppIcon(AppIconsData.selectedSettings),
-            icon: AppIcon(AppIconsData.unselectedSettings),
-            label: AppStrConstants.settingsTitle,
-          ),
-        ],
-      ),
+        BottomNavigationBarItem(
+          activeIcon: AppIcon(AppIconsData.selectedUsers),
+          icon: AppIcon(AppIconsData.unselectedUsers),
+          label: AppStrConstants.users,
+        ),
+        BottomNavigationBarItem(
+          activeIcon: AppIcon(AppIconsData.selectedSettings),
+          icon: AppIcon(AppIconsData.unselectedSettings),
+          label: AppStrConstants.settingsTitle,
+        ),
+      ],
     );
   }
 }

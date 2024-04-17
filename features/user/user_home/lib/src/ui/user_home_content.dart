@@ -26,7 +26,8 @@ class UserHomeContent extends StatelessWidget {
             SettingsRoute(),
           ],
           //TODO: try to fix it
-          navigationBar: (TabsRouter router) => UserNavigationBar(router: router),
+          navigationBar: (TabsRouter router) =>
+              UserNavigationBar(router: router),
         ),
         BlocBuilder<UserHomeScreenBloc, UserHomeScreenState>(
           builder: (BuildContext context, UserHomeScreenState state) {
