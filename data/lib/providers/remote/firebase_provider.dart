@@ -1,5 +1,5 @@
 import 'package:core/core.dart' show FirebaseFirestore, QueryDocumentSnapshot;
-import 'package:core/enums/role.dart';
+import 'package:core/enums/role_enum.dart';
 import 'package:core_ui/core_ui.dart' show AppStrConstants;
 import 'package:data/entities/dish_type/dish_type_entity.dart';
 import 'package:data/entities/order_history/order_entity.dart';

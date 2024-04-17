@@ -1,4 +1,4 @@
-import 'package:core/enums/role.dart';
+import 'package:core/enums/role_enum.dart';
 import 'package:data/mappers/user_mapper.dart';
 import 'package:data/providers/local/hive_provider.dart';
 import 'package:data/providers/remote/firebase_provider.dart';

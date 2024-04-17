@@ -1,4 +1,4 @@
-import 'package:core/enums/role.dart';
+import 'package:core/enums/role_enum.dart';
 
 class UserModel {
   final String id;

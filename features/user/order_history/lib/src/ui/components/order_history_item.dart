@@ -1,6 +1,7 @@
 import 'package:core_ui/core_ui.dart';
 import 'package:domain/models/order_history/order_model.dart';
 import 'package:flutter/material.dart';
+import 'package:order_history/src/ui/components/order_item_configuration.dart';
 import 'package:order_history/src/ui/components/main_info.dart';
 
 class OrderHistoryItem extends StatefulWidget {
@@ -28,28 +29,8 @@ class _OrderHistoryItemState extends State<OrderHistoryItem>
     final ThemeData themeData = Theme.of(context);
 
     super.build(context);
-    return Container(
-      padding: const EdgeInsets.only(
-        left: AppDimens.padding15,
-        top: AppDimens.padding20,
-        bottom: AppDimens.padding10,
-      ),
-      margin: const EdgeInsets.only(
-        top: AppDimens.margin5,
-        bottom: AppDimens.margin5,
-      ),
-      decoration: BoxDecoration(
-        boxShadow: <BoxShadow>[
-          BoxShadow(
-            blurStyle: BlurStyle.outer,
-            blurRadius: AppDimens.padding10,
-            color: themeData.cardColor,
-          ),
-        ],
-        borderRadius: const BorderRadius.all(
-          Radius.circular(AppDimens.radius10),
-        ),
-      ),
+    return OrderItemConfiguration(
+      orderStatus: widget._model.status,
       child: Column(
         children: <Widget>[
           LayoutBuilder(

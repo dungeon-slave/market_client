@@ -1,7 +1,5 @@
-import 'package:data/entities/cart_item/cart_item_entity.dart';
 import 'package:data/entities/order_history/order_entity.dart';
 import 'package:data/mappers/cart_item_mapper.dart';
-import 'package:domain/models/cart_items/cart_item_model.dart';
 import 'package:domain/models/order_history/order_model.dart';
 
 abstract class OrderMapper {
@@ -10,11 +8,8 @@ abstract class OrderMapper {
       id: model.id,
       dateTime: model.dateTime,
       price: model.price,
-      products: model.products
-          .map(
-            (CartItemModel model) => CartItemMapper.toEntity(model),
-          )
-          .toList(),
+      products: model.products.map(CartItemMapper.toEntity).toList(),
+      status: model.status,
     );
   }
 
@@ -23,11 +18,8 @@ abstract class OrderMapper {
       id: entity.id.hashCode.toString(),
       dateTime: entity.dateTime,
       price: entity.price,
-      products: entity.products
-          .map(
-            (CartItemEntity entity) => CartItemMapper.toModel(entity),
-          )
-          .toList(),
+      products: entity.products.map(CartItemMapper.toModel).toList(),
+      status: entity.status,
     );
   }
 }

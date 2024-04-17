@@ -17,3 +17,6 @@ export 'package:uuid/uuid.dart';
 
 export 'package:core/services/url_service.dart';
 export 'package:core/services/auth_service.dart';
+
+export 'package:core/enums/role_enum.dart';
+export 'package:core/enums/order_status_enum.dart';
