@@ -58,6 +58,10 @@ dependencies:
   #order manager
   order_manager_home:
     path: ../features/managers/order_manager/order_manager_home
+  current_orders:
+    path: ../features/managers/order_manager/current_orders
+  history_orders:
+    path: ../features/managers/order_manager/history_orders
 
   #catalogue manager
   catalogue_manager_home:

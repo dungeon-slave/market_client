@@ -1,8 +1,8 @@
 enum OrderStatus {
   accepted('Accepted'),///When system receives order from buyer
-  completed('Completed'),///When order is completed but not received by buyer
-  cancelled('Cancelled'),///When its cancelled for any reason
-  received('Received');///When order is received by buyer
+  ready('Ready'),///When order is ready but not received by buyer
+  canceled('Canceled'),///When its cancelled for any reason
+  completed('Completed');///When order is received by buyer
 
   final String value;
 

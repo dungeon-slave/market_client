@@ -4,8 +4,8 @@ abstract class AppIconsData {
   static const IconData unselectedAdminMenu = Icons.assignment_outlined;
   static const IconData selectedAdminMenu = Icons.assignment_rounded;
 
-  static const IconData unselectedUsers = Icons.manage_accounts_outlined;
-  static const IconData selectedUsers = Icons.manage_accounts;
+  static const IconData unselectedUsers = Icons.history_outlined;
+  static const IconData selectedUsers = Icons.history_rounded;
 
   static const IconData unselectedMenu = Icons.storefront;
   static const IconData selectedMenu = Icons.storefront_rounded;

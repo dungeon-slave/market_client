@@ -17,7 +17,7 @@ class MainInfo extends StatelessWidget {
         Align(
           alignment: Alignment.center,
           child: Text(
-            '${AppStrConstants.orderN}${_model.id}',
+            '${AppStrConstants.orderN}${_model.idHash}',
             style: AppFonts.normal22,
           ),
         ),

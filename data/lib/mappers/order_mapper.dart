@@ -5,7 +5,7 @@ import 'package:domain/models/order_history/order_model.dart';
 abstract class OrderMapper {
   static OrderEntity toEntity(OrderModel model) {
     return OrderEntity(
-      id: model.id,
+      id: model.realId,
       dateTime: model.dateTime,
       price: model.price,
       products: model.products.map(CartItemMapper.toEntity).toList(),
@@ -15,11 +15,12 @@ abstract class OrderMapper {
 
   static OrderModel toModel(OrderEntity entity) {
     return OrderModel(
-      id: entity.id.hashCode.toString(),
+      idHash: entity.id.hashCode.toString(),
       dateTime: entity.dateTime,
       price: entity.price,
       products: entity.products.map(CartItemMapper.toModel).toList(),
       status: entity.status,
+      realId: entity.id,
     );
   }
 }

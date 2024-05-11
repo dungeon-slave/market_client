@@ -95,11 +95,12 @@ class ShoppingCartBloc extends Bloc<ShoppingCartEvent, ShoppingCartState> {
     try {
       await _sendOrderUseCase.execute(
         OrderModel(
-          id: const Uuid().v4(),
+          idHash: '',
           dateTime: DateTime.now(),
           price: state.totalPrice(),
           products: state.items,
           status: OrderStatus.accepted,
+          realId: const Uuid().v4(),
         ),
       );
       await _clearCartUseCase.execute(const NoParams());

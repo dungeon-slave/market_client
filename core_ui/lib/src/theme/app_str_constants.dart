@@ -1,9 +1,11 @@
 abstract class AppStrConstants {
+  ///Firebase constants
   static const String menuCollection = 'dishes_menu';
   static const String usersCollection = 'users';
-  static const String userOrdersCollection = 'orders';
+  static const String ordersCollection = 'orders';
   static const String userCartCollection = 'cart';
   static const String userRoleField = 'role';
+  static const String allUserOrdersCollection = 'all';
 
   static const String contactUs = 'Contact us';
 

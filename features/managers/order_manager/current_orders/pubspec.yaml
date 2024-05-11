@@ -1,7 +1,7 @@
-name: order_manager_home
+name: current_orders
 version: 0.0.1
 publish_to: none
-description: Order manager screen library.
+description: Current orders feature.
 
 environment:
   sdk: '>=3.1.0 <4.0.0'
@@ -11,20 +11,15 @@ dependencies:
   flutter:
     sdk: flutter
 
+  domain:
+    path: ../../../../domain
   core:
     path: ../../../../core
   core_ui:
     path: ../../../../core_ui
-  domain:
-    path: ../../../../domain
 
-  current_orders:
-    path: ../current_orders
-  history_orders:
-    path: ../history_orders
-
-  settings:
-    path: ../../../common/settings
+  order_manager_home:
+    path: ../order_manager_home
 
 dev_dependencies:
   flutter_test:

@@ -3,8 +3,10 @@ import 'package:admin_menu/admin_menu.dart';
 import 'package:catalogue_manager_home/catalogue_manager_home_screen.dart';
 import 'package:core/core.dart';
 import 'package:core_ui/core_ui.dart';
+import 'package:current_orders/current_orders.dart';
 import 'package:detailed_page/detailed_page.dart';
 import 'package:dishes_menu/dishes_menu.dart';
+import 'package:history_orders/history_orders.dart';
 import 'package:order_manager_home/order_manager_home_screen.dart';
 import 'package:user_home/user_home_screen.dart';
 import 'package:main_screen/main_screen.dart';
@@ -38,6 +40,8 @@ part 'app_router.gr.dart';
     UserManagerHomeScreenModule,
     OrderManagerHomeScreenModule,
     CatalogueManagerHomeScreenModule,
+    CurrentOrdersModule,
+    HistoryOrdersModule,
   ],
 )
 class AppRouter extends _$AppRouter {
@@ -109,21 +113,6 @@ class AppRouter extends _$AppRouter {
               ],
             ),
             AutoRoute(
-              path: 'admin',
-              page: AdminHomeRoute.page,
-              children: <AutoRoute>[
-                AutoRoute(
-                  path: 'adminMenu',
-                  page: AdminMenu.page,
-                ),
-                AutoRoute(
-                  path: 'users',
-                  page: Users.page,
-                ),
-                _settingsRoute,
-              ],
-            ),
-            AutoRoute(
               page: UserManagerHomeRoute.page,
               path: 'userManager',
               children: <AutoRoute>[
@@ -134,6 +123,17 @@ class AppRouter extends _$AppRouter {
               page: OrderManagerHomeRoute.page,
               path: 'orderManager',
               children: <AutoRoute>[
+                AutoRoute(
+                  initial: true,
+                  maintainState: false,
+                  path: 'currentOrders',
+                  page: CurrentOrdersRoute.page,
+                ),
+                AutoRoute(
+                  maintainState: false,
+                  path: 'historyOrders',
+                  page: HistoryOrdersRoute.page,
+                ),
                 _settingsRoute,
               ],
             ),

@@ -6,6 +6,7 @@ export 'package:domain/repositories/cart_repository.dart';
 export 'package:domain/repositories/text_scale_repository.dart';
 export 'package:domain/repositories/order_history_repository.dart';
 export 'package:domain/repositories/user_repository.dart';
+export 'package:domain/repositories/order_manager_repository.dart';
 
 export 'package:domain/usecase/dishes/fetch_dishes_usecase.dart';
 export 'package:domain/usecase/theme/fetch_theme_usecase.dart';
@@ -22,7 +23,11 @@ export 'package:domain/usecase/authentication/email_sign_up_usecase.dart';
 export 'package:domain/usecase/authentication/google_sign_in_usecase.dart';
 export 'package:domain/usecase/authentication/sign_out_usecase.dart';
 export 'package:domain/usecase/authentication/check_user_role_usecase.dart';
+export 'package:domain/usecase/order_history/fetch_all_orders.dart';
+export 'package:domain/usecase/order_history/update_order_status.dart';
 
 export 'package:domain/models/authentication/email_sign_in_model.dart';
 export 'package:domain/models/authentication/email_sign_up_model.dart';
 export 'package:domain/models/user/user_model.dart';
+export 'package:domain/models/order_history/user_orders_model.dart';
+export 'package:domain/models/order_history/all_users_orders_model.dart';

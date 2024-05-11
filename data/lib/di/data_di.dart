@@ -12,6 +12,7 @@ import 'package:data/repositories/authentication_repository_impl.dart';
 import 'package:data/repositories/cart_repository_impl.dart';
 import 'package:data/repositories/dishes_repository_impl.dart';
 import 'package:data/repositories/order_history_repository_impl.dart';
+import 'package:data/repositories/order_manager_repository_impl.dart';
 import 'package:data/repositories/text_scale_repository.dart';
 import 'package:data/repositories/theme_repository_impl.dart';
 import 'package:data/repositories/user_repository_impl.dart';
@@ -82,6 +83,12 @@ class DataDI {
   }
 
   void _initRepositories() {
+    appLocator.registerLazySingleton<OrderManagerRepository>(
+      () => OrderManagerRepositoryImpl(
+        firebaseProvider: appLocator<FirebaseProvider>(),
+      ),
+    );
+
     appLocator.registerLazySingleton<UserRepository>(
       () => UserRepositoryImpl(
         hiveProvider: appLocator<HiveProvider>(),
@@ -130,6 +137,18 @@ class DataDI {
   }
 
   void _initUseCases() {
+    appLocator.registerLazySingleton<FetchAllOrdersUseCase>(
+      () => FetchAllOrdersUseCase(
+        orderManagerRepository: appLocator<OrderManagerRepository>(),
+      ),
+    );
+
+    appLocator.registerLazySingleton<UpdateOrderStatusUseCase>(
+      () => UpdateOrderStatusUseCase(
+        orderManagerRepository: appLocator<OrderManagerRepository>(),
+      ),
+    );
+
     appLocator.registerLazySingleton<FetchOrderHistoryUseCase>(
       () => FetchOrderHistoryUseCase(
         orderHistoryRepository: appLocator<OrderHistoryRepository>(),
